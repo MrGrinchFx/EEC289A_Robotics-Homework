@@ -51,7 +51,7 @@ def default_config() -> config_dict.ConfigDict:
         Kd=0.5,
         action_repeat=1,
         action_scale=0.5,
-        history_len=1,
+        history_len=3,
         soft_joint_pos_limit_factor=0.95,
         noise_config=config_dict.create(
             level=1.0,
@@ -71,7 +71,7 @@ def default_config() -> config_dict.ConfigDict:
                 # Stability terms
                 lin_vel_z=-0.5,
                 ang_vel_xy=-0.05,
-                orientation=-5.0,
+                orientation=-15.0,
                 dof_pos_limits=-1.0,
                 pose=0.5,
                 termination=-1.0,
@@ -90,7 +90,7 @@ def default_config() -> config_dict.ConfigDict:
             max_foot_height=0.1,
         ),
         pert_config=config_dict.create(
-            enable=False,
+            enable=True,
             velocity_kick=[0.0, 3.0],
             kick_durations=[0.05, 0.2],
             kick_wait_times=[1.0, 3.0],
