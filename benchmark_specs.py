@@ -13,6 +13,7 @@ PUBLIC_EPISODE_LABELS = (
     "lateral_only",
     "yaw_only",
     "combined",
+    "magnitude_sweep",
 )
 
 
@@ -64,6 +65,15 @@ def public_command_script(safe_ranges: dict[str, list[float]], episode_idx: int)
             [0.0, 0.0, 0.0],
             [0.35 * vx_max, 0.35 * vy_max, 0.25 * yaw_max],
             [0.60 * vx_max, 0.50 * vy_max, 0.40 * yaw_max],
+            [0.0, 0.0, 0.0],
+        ],
+        [
+            [0.0, 0.0, 0.0],
+            [0.2, 0.0, 0.0], # Slow walk
+            [0.5, 0.0, 0.0], # Jog
+            [0.8, 0.0, 0.0], # Fast run
+            [1.0, 0.0, 0.0], # Pushing the limit
+            [1.2, 0.0, 0.0], # Beyond training bounds (Stress test)
             [0.0, 0.0, 0.0],
         ],
     ]
