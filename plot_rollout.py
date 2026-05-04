@@ -16,7 +16,7 @@ def main():
     data = np.load(args.rollout_npz)
     
     episodes = np.unique(data["episode_id"])
-    episode_labels = ["Forward", "Lateral", "Yaw", "Combined"]
+    episode_labels = ["Forward", "Lateral", "Yaw", "Combined", "Magnitude Sweep"]
 
     for eid in episodes:
         mask = data["episode_id"] == eid
